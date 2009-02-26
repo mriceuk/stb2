@@ -1,0 +1,29 @@
+
+<div id="flashcontent">
+		<p class="htmlvers">Sorry. You'll need to have Flash 8 or higher to view the Spot the Bull website. It's very quick to download, honest, <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&promoid=BIOW">just click here</a>. Alternatively, you can view a version of the site without Flash by <a href="/html">clicking here</a>.</p>
+</div>
+<br />
+<br />
+<!--
+<div id="bull_position" class="section">
+	<h2>Add Bull Position</h2>
+
+	<% form_tag "/admin/add_location", :id => 'bull_position' do %>
+		<p><label>X:</label> <%= text_field_tag "location[x]" %></p>
+		<p><label>Y:</label> <%= text_field_tag "location[y]" %></p>
+		<p><label>playing square id:</label> <%= select_tag "location[playing_square_id]", (1..100).collect {|o| '<option>' + o.to_s + '</option>'} %></p>
+		<%= submit_tag "Submit", :class => 'submit' %>
+	<% end %>
+</div>
+//-->
+<div id="previous_positions" class="section">
+  <h2>Last 10 Spots</h2>
+  <ul id="positions">
+  <% @positions.each do |position| %>
+    <li>
+      x<%= position.x %>, y<%= position.y %>, Square <%= position.playing_square_id %><br />
+      <span class="time"><%= position.created_at.strftime("%e %B, %H:%M")%></span>
+    </li>
+  <% end -%>
+  </ul>
+</div>

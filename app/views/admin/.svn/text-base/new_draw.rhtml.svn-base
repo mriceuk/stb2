@@ -1,0 +1,46 @@
+<div id="draw_wrapper" class="section">
+	<h2>The Draw</h2>
+	<%= button_to "Make Draw", :action => "draw", :class => 'submit' %>
+</div>
+
+<div id="winners" class="section">
+  <h2>Last Draw's Winners</h2>  
+  
+  <% if @last_draw %>
+	   <% winners(@last_draw.entrants) %>
+      <ul class="places">
+        <h4>Winners</h4>
+        <li class="winner">
+          <% @winner.each do |winner| %>
+						<span>name: <%= winner.name %></span>
+						<span>email: <%= winner.email %></span>
+						<span>mobile:<%= winner.mobile %></span><br>
+					<% end -%>
+        </li>
+        <h4>Runners up</h4>
+        <li class="runner_up">
+					<% if @first_runner_up %>
+          	<% @first_runner_up.each do |first_runner_up| %>
+							<span>name: <%= first_runner_up.name %></span>
+							<span>email: <%= first_runner_up.email %></span>
+							<span>mobile: <%= first_runner_up.mobile %></span><br>					
+						<% end -%>
+					<% end %>
+        </li>
+        <h4>Second runners up</h4>
+        <li class="second_runner_up">
+					<% if @second_runner_up %>
+	          <% @second_runner_up.each do |second_runner_up| %>
+	            <span>name: <%= second_runner_up.name %></span>
+	            <span>email: <%= second_runner_up.email %></span>
+							<span>mobile: <%= second_runner_up.mobile %></span><br>
+	          <% end -%>
+					<% end %>
+        </li>
+      </ul>
+  <% end -%>
+
+  <div class="section_footer">
+    <p class="link">See more winners on the <%= link_to "reports page", :action => 'reports' %>.</p>
+  </div>
+</div>

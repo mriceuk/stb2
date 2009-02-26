@@ -1,0 +1,211 @@
+/* 
+	Document:				main.css
+	Modified date: 			3 April 2008
+	Created by:				Gemma Leigh
+	Deployment version:		project/css/main.css
+	Notes:					Imports reset and styles (the main site stylesheet) CSS files. 
+							Contains commonly used helper styles.
+								
+	=================================================================
+	Style guide, naming conventions, best practices.
+	=================================================================
+	
+	Use a common naming system:
+	
+		#parent .parent-child {
+			margin:0px auto;
+		}
+	
+	Filtering for non-compliant browsers:
+		.class-name {
+			margin: 10px 0 !important;  This will be applied by all browsers
+			margin: 5px 0; 			IE < v7 will then override the above with this value
+			}
+		
+	Do not use the following filters unless absolutely necessary and always comment reasons for use:
+		* html [selector]				IE < v7 only
+		html>body [selector]			Standards compliant browsers only
+		_margin							Underscore hack
+	
+	Links should have link, visited, hover, active and focus states and should be visible via text-decoration and/or color
+	
+	Use shorthand where possible:
+		background: url() top left no-repeat #FF0;
+		border: 1px #F0F solid;
+		font: 12px/1.4 "Trebuchet MS", Verdana, Arial, sans-serif;
+		margin: 20px 0 0 5px;
+	
+	// IMAGE REPLACEMENT //
+	
+	Image replacement should be achieved as follows:
+		// Gilder/Levin method for images with solid backgrounds
+		// Works in JAWS. Issues: extra empty span, transparent images don't hide text.
+		
+		// For a non-link element	
+		#my-id {
+			width: Xpx; 
+			height: Xpx;
+			}
+		#my-id em{
+			background: url(X.gif);
+		}
+		<p id="my-id" class="replace"><em></em>Some text</p>
+		
+		// Phark method for images with transparent backgrounds
+		// Works in JAWS. Issues: nothing shows up under "images off, css on" scenarios, doesn't work in IE5.
+		
+		// For a non-link element:
+		#my-id {
+			width: Xpx; 
+			height: Xpx;
+			background: url(X.gif);
+			}
+		<p id="my-id" class="phark-replace">Some text</p>
+
+		// For a link element with no rollover (note the background is applied to the <a> element):
+		#my-id a {
+			width: Xpx; 
+			height: Xpx;
+			background: url(X.gif);
+			}
+		<p id="my-id" class="phark-replace"><a href="http://www.pokelondon.com" title="Go to Poke">Poke</a></p>
+		
+		
+	Rollovers should be achieved as follows:
+		// Same as Phark image replacement method but note the additional class="rollover" on the <a> element
+		// This will create a "sliding doors effect", the off state aligned top left, the on state aligned bottom left
+		#my_id a {
+			width: Xpx; 
+			height: Xpx;
+			background: url(X.gif);
+			}
+		<p id="my_id" class="phark-replace"><a href="http://www.pokelondon.com" title="Go to Poke" class="rollover">Poke</a></p>
+	
+	// ACCESSIBILITY //
+	
+	Accessibility guidelines:
+	- Avoid use of display:none and visibility:hidden as screen readers cannot see the content	
+	- Acronyms should be underlined and make use of the help cursor
+	- All submit and button inputs should make use of the hand cursor
+	- An accessibility skip navigation should be included:
+		// This will be hidden off screen but visible to screen readers (see =Skip below)		
+	
+	Stylesheets should be commented clearly:
+		// For bugs/issues document the problem, workaround and where possible - a URL to the explanation of the fix
+		// Use the following 'Notes to self' 
+		:TODO: 	-  reminder to change/fix/revise
+		:BUG: 	-  document a problem with the code or a particular browser
+		:KLUDGE:-  nasty workaround	
+	*/
+
+	@import "reset.css";
+	@import "styles.css";
+		
+/* =Colour glossary
+--------------------------------------------------------------------- */	
+/* Quick reference to colours used in the site:
+
+dark grey : #403F3E
+mid grey:	#807F7C
+m-l grey:	#BFBEBA
+light grey:	#E6E4E0
+whitish:	#FFFEF9
+*/
+	
+/* =Helper styles
+--------------------------------------------------------------------- */
+
+/* Floats and clear */
+.left  { float:left; }
+.right { float:right; }
+.clear { clear:both; }
+
+/* http://www.quirksmode.org/css/clearing.html */
+.clear-simple{
+	width: 100%;
+	overflow: hidden;
+}
+
+/* Clearfix - clear the container div in the absence of a child clearing div */
+.clearfix:after {
+ 	content: ".";
+	height: 0 !important;
+	visibility: hidden;
+ 	display: block;	
+ 	clear: both;
+}
+/* no need to hide from IE5 Mac as its filtered out anyway */
+.clearfix {display:inline-block;}
+
+
+/* Hidden text or use to position tracking tags offscreen */
+.hidden	{
+	position:absolute; 
+	left:0; 
+	top:-10000px; 
+	width:0; 
+	height:0; 
+	overflow:hidden;
+}
+
+/* Image replacement using the Gilder/Levin method for images with solid backgrounds 
+	// Text remains in place on screen, so can be seen with CSS on but images off */
+.replace {
+	position: relative; 
+	overflow: hidden;
+}
+.replace em,
+.replace a{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+}
+
+/*  Image replacement using the Phark method for images with transparent backgrounds 
+	// Text indented off screen, cannot be seen with CSS on but images off  - still read by screen readers */
+.phark-replace { 
+	overflow: hidden; /* prevents dotted lines extending offscreen in FF */
+	background-repeat: no-repeat;
+	text-indent: -9000px;
+}
+	
+.phark-replace a { 
+	display: block; 
+	width: 100%; 
+	height: 100%;
+}
+
+/* Rollovers */
+.rollover:hover, 
+.rollover:active, 
+.rollover:focus {
+	background-position: bottom left !important;
+}
+
+/* =Skip navigation
+--------------------------------------------------------------------- */
+#skipnav {
+	position: absolute;
+	top: -9000px;
+	left: 0;
+}
+	
+#skipnav li {
+	width: 300px;
+}
+
+#skipnav a {
+	position: absolute;
+	top: 0;
+	padding: 10px;
+}
+
+#skipnav a:active, 
+#skipnav a:focus {
+			top: 9000px;
+}

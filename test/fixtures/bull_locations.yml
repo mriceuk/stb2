@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  x: 23
+  y: 324
+  playing_square_id: 21
+  created_at: <%= Time.now.change(:hour => 12).to_s(:db) %>
+  
+two:
+  id: 2
+  x: 23
+  y: 324
+  playing_square_id: 21
+  created_at: <%= Time.now.change(:hour => 12).to_s(:db) %>
+  
+three:
+  id: 3
+  x: 23
+  y: 324
+  playing_square_id: 16
+  created_at: <%= Time.now.change(:hour => 13).to_s(:db) %>

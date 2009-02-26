@@ -1,0 +1,69 @@
+/* 
+	Document:				reset.css
+	Creation date: 			3 April 2008
+	Created by:				Gemma Leigh
+	Deployment version:		project/css/reset.css
+	Notes:					Resets default browser CSS styles. Based on Y!UI reset
+
+	-----------------------------------------------------------------
+
+	http://developer.yahoo.net/yui/license.txt
+	version: 2.5.1
+	Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+	Code licensed under the BSD License:
+	-----------------------------------------------------------------
+*/
+/* Y!UI reset.css */
+html{color:#000;background:#FFF;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+/* tables still need 'cellspacing="0"' in the markup */
+
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+fieldset,
+img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+
+li{list-style:none;}
+
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym {border:0;font-variant:normal;}
+/* to preserve line-height and selector appearance */
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+/*to enable resizing for IE*/
+input,textarea,select{*font-size:100%;}
+/*because legend doesn't inherit in IE */
+legend{color:#000;}
+
+/* Y!UI reset-fonts.css */
+table 	{ font-size:inherit;font:100%;}
+
+/* Additional reset styles 
+--------------------------------------------------------------------- */
+/* Reset Global reset to values we would expect for some elements */
+strong		{ font-weight: bold;}
+ 
+/* Remove Mozilla's dashed borders */
+a 	{outline:none;}
+a:active {outline:none;}
+input[type=submit] {outline-width:0;}
+
+input { vertical-align:middle; }
+/* Remove border around fieldset even on Opera 7 */
+fieldset {
+  border: solid 0 transparent;
+}
+
+/* Remove blue border around linked images */
+a img {
+	border: 0;
+}
+/* Links display over PNG background */
+* a { position: relative;}

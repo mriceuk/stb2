@@ -1,0 +1,7 @@
+K 13
+svn:externals
+V 237
+flash   svn+ssh://linus/home/repository/pokelondon/projects/spotthebull2_flash.orange.pokelondon.com/trunk/deploy
+bull_positions   svn+ssh://linus/home/repository/pokelondon/projects/spotthebull2_flash.orange.pokelondon.com/trunk/deploy
+
+END

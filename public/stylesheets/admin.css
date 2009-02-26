@@ -1,0 +1,395 @@
+/*** css reset ***/
+@import 'reset.css';
+
+body {
+  font-family: "LucidaGrande", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana,sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFEEC;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  line-height: 1.2em;
+  margin-bottom: 10px;
+}
+
+/*** admin header ***/
+div#admin_header {
+  width: 100%;
+  font-size: 16px;
+  margin: 0 0 20px 0;
+  background-color: #d3d3d3;
+}
+
+div#admin_header h1 {
+  margin: 0 0 0 10px;
+  padding: 10px 0 0 0;
+  font-size: 28px;
+  font-weight: normal;
+  letter-spacing: -1px;
+}
+
+/*** navigation ***/
+div#admin_header ul {
+  margin: 20px 0 0 0;
+  list-style-type: none;
+  display: block;
+  padding: 0 0 12px 0;
+}
+
+div#admin_header ul li {
+  display: inline;
+  font-size: 18px;
+  line-height: 1;
+}
+
+div#admin_header ul li a {
+  padding: 10px;
+  text-decoration: none;
+  color: #444;
+}
+
+div#admin_header ul li a:hover {
+  background-color: #FF6600;
+  color: #fff;
+}
+
+/*** admin wrapper ***/
+#admin_wrapper {
+  margin: 0 0 0 10px;
+}
+
+/*** content ****/
+div#content {
+  width: 900px;
+}
+
+
+
+/*** sections ***/
+div.section {
+  display: block;
+  margin: 0 0 20px 0;
+  border-right: 1px solid #d3d3d3;
+  border-bottom: 1px solid #d3d3d3;
+  border-left: 1px solid #d3d3d3;
+  background-color: #FFFEFA;
+}
+
+div.section h2 {
+  background-color: #ff6600;
+  padding: 10px;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: -1px;
+}
+
+div.section h3 {
+  width: 100%;
+  color: #444;
+  background-color: #d3d3d3;
+  padding: 5px;
+  font-size: 1.2em;
+}
+
+div.section_footer {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #FFF1BB;
+  border-top: 1px solid #d3d3d3;
+}
+div.section p.link {
+  font-size: 0.9em;
+  margin: 0 0 0 10px;
+}
+
+/*** forms ***/
+form {
+  padding: 10px;
+  margin: 0 10px 0 0;
+}
+
+form p {
+  margin: 0 0 10px 0;
+}
+
+form input,
+form textarea {
+  padding: 2px 5px;
+  border: 1px solid #aaa;
+}
+
+form select {
+  margin: 0 0 0 10px;
+}
+
+form input.submit,
+form.button-to input {
+  width: auto;
+  font-size: 1.2em;
+  margin: 10px 15px 0 0;
+  padding: 5px 10px;
+}
+
+form input.submit:hover,
+form.button-to input:hover {
+  background-color: #ff6600;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+}
+
+/*** home ***/
+div#home p {
+  margin: 0 0 10px 0;
+  font-size: 1.3em;
+}
+
+div#home p span {
+  color: #ff6600;
+  font-weight: bold;
+}
+/*** bull position ***/
+ul#positions {
+  margin: 10px;
+}
+
+ul#positions li span.time {
+  color: #444;
+  font-size: 0.9em;
+}
+
+/*** create news ***/
+form#new_news_item input.title,
+form.edit_news_item input.title,
+form#new_news_item textarea.description,
+form.edit_news_item textarea.description {
+  margin: 10px 0 0 0;
+}
+form#new_news_item input.title,
+form.edit_news_item input.title {
+  width: 100%;
+  font-size: 1.3em;
+}
+
+form#new_news_item textarea.description,
+form.edit_news_item textarea.description {
+  width: 100%;
+  height: 5em;
+  font-family: inherit;
+}
+
+form#new_news_item p#caption,
+form.edit_news_item p#caption {
+  margin: 10px 0;
+}
+
+form#new_news_item p#caption input,
+form.edit_news_item p#caption input {
+  width: 100%;
+  margin: 10px 0 0 0;
+}
+
+form#new_news_item p.media img,
+form.edit_news_item p.media img {
+  border: 1px solid #ddd;
+}
+
+form#new_news_item label#publish,
+form.edit_news_item label#publish {
+  color: #444;
+}
+
+form#new_news_item label input#news_item_published,
+form.edit_news_item label input#news_item_published {
+  width: 15px;
+  height: 15px;
+}
+
+/*** news items ***/
+div#news_items {
+  padding: 10px;
+  height: auto;
+}
+div.news_wrap {
+  clear: both;
+  display: block;
+}
+div.news_item {
+  margin: 0 30px 10px 0;
+}
+
+div.news_item h3 {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  color: #444;
+  background-color: #FFFEFA;
+  font-size: 1.3em;
+}
+
+div.news_item h3 span {
+  color: #000;
+}
+
+div.news_item h3 span.published {
+  margin: 0 0 0 10px;
+  font-size: 0.6em;
+  color: #999;
+}
+
+div.news_item p {
+  line-height: 1.2;
+  color: #444;
+}
+
+div.news_item p.meta {
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+div.news_item p.actions a {
+  text-decoration: none;
+  font-size: 0.9em;
+  color: #999;
+  margin: 0 10px 0 0;
+  padding: 0;  
+}
+
+div.news_item p.actions a:hover {
+  color: #000;
+}
+
+div#news_items p.media img {
+  border: 1px solid #ddd;
+  margin: 10px 0 0 0;
+}
+
+/*** draws ***/
+div#winners ul.places {
+  margin: 10px;
+  color: #444;
+  font-size: 1.1em;
+}
+
+div#winners ul.places h4 {
+  width: 700px;
+  padding: 5px;
+  background-color: #ddd;
+  font-size: 1.2em;
+}
+
+div#winners ul.places li {
+  margin: 0 0 15px 0;
+}
+
+div#winners ul.places li span {
+  margin: 0 20px 0 0;
+}
+
+ul#winners li span {
+  color: #000;
+  font-size: 0.9em;
+}
+
+/*** reports ***/
+div#stats {
+  margin: 20px 0;
+}
+
+div#stats span {
+  color: #ff6600;
+  font-size: 1.5em;
+}
+
+div#stats span#uniques {
+  margin: 0 0 0 30px;
+}
+
+div#stats span#unique span {
+  font-size: 1.3em;
+  color: #444;
+}
+div#stats p.small_stats {
+  margin: 15px 2px;
+  font-size: 0.8em;
+}
+
+div#stats p.small_stats span {
+  font-size: 1.4em;
+  color: #555;
+}
+
+div#stats p.small_stats em {
+  margin: 0 10px;
+}
+
+div#all_draws h3 {
+  margin: 0;
+  padding: 5px 0;
+}
+
+div#all_draws h3 span {
+  padding: 10px;
+}
+
+div#all_draws h3 span.entrants,
+div#all_draws h3 span.square {
+  padding: 0;
+  color: #000;
+}
+
+div.draw ul h4 {
+  width: 600px;
+  padding: 5px;
+  background-color: #FFF1BB;
+  font-size: 1.2em;
+}
+div.draw ul.places {
+  margin: 10px;
+}
+
+div.draw ul.places li {
+  margin: 0 0 20px 0;
+}
+div.draw ul.places li span {
+  margin: 0 20px 0 0;
+}
+
+div#all_draws p.qualifiers {
+  margin: 10px;
+  font-size: 0.9em;
+  color: #444;
+}
+
+/*** flash ***/
+div#flash {
+  font-size: 14px;
+  margin: 10px 0 10px 0;
+  color: #FF6600;
+}
+
+div#flash p {
+  margin: 0 0 20px 0;
+}
+
+/*** errors ***/
+div#errorExplanation {
+  color: #BD1212;
+}
+div#errorExplanation h2 {
+  margin: 0 0 0 0 ;
+  line-height: 1.4;
+}
+div#errorExplanation p {
+  line-height: 1.4;
+}
+div#errorExplanation ul li {
+  font-weight: bold;
+  line-height: 1.4;
+}

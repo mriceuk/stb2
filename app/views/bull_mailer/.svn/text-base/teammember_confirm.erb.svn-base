@@ -1,0 +1,12 @@
+Hi <%= @name %>
+ 
+Thanks for playing Spot the Bull.
+ 
+You’ve chosen square <%= @playing_square_id.to_s %> and joined the team.
+ 
+If Winston’s in any of the team’s squares at 3pm you’ll all go into the draw.
+And if any of you are picked, you’ll all win a pair of Glastonbury tickets each. 
+ 
+Good luck. 
+ 
+PS. watch Winston live at http://www.spotthebull.co.uk

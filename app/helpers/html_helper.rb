@@ -1,0 +1,2 @@
+module HtmlHelper
+end

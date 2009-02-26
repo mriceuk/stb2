@@ -1,0 +1,33 @@
+<div id="stats">
+  <p><span><%= number_with_delimiter(@entrants.length) %></span> total entrants. <span id="uniques"><%= number_with_delimiter(@uniques) %></span> unique entries.</p>
+  <p class="small_stats"><span><%= number_with_delimiter(@active_count) %></span> groups created. <em>|</em> <span><%= number_with_delimiter(@group_avg) %></span> players average in a group. <em>|</em> <span><%= number_with_delimiter(@noplay.length) %></span> invitees haven't played.</p>
+</div>
+<div id="all_draws" class="section">
+  <h2>All draws</h2>
+  <div id="draws_wrap">
+  <% unless @draws.empty? %>
+    <% @draws.each do |draw| %>
+      <div class="draw">
+      <h3><span>Draw for <%= draw.play_date.strftime("%e %B") %> :: <span class="entrants"><%= draw.entrants.length %></span> entrants. :: Winning square <span class="square"><%= draw.winning_square %></span>.</span></h3>
+      <% winners(draw.entrants) %>
+      <ul class="places">
+        <h4>Winners</h4>
+        <li class="winner">
+          <% @winner.each do |winner| %><span><%= winner.email %></span><% end -%>
+        </li>
+        <h4>Runners up</h4>
+        <li class="runner_up">
+          <% @first_runner_up.each do |first_runner_up| %><span><%= first_runner_up.email %></span><% end -%>
+        </li>
+        <h4>Second runners up</h4>
+        <li class="second_runner_up">
+          <% @second_runner_up.each do |second_runner_up| %><span><%= second_runner_up.email %></span><% end -%>
+        </li>
+      </ul>
+       <p class="qualifiers">...and <%= count_qualifiers(draw.entrants) %> additional qualifiers.</p>
+      </div>
+      <% end -%>
+     
+  <% end -%>
+  </div>
+</div>

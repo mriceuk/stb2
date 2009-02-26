@@ -1,0 +1,38 @@
+require "#{File.dirname(__FILE__)}/../test_helper"
+require 'mocha'
+
+class UserStoriesTest < ActionController::IntegrationTest
+  # fixtures :your, :models
+
+  def test_cant_complete_entry_if_signup_takes_place_across_deadline
+    
+    set_time_to_be_1pm
+    post "/entrants/", :entrant => { :name => "marc rice", :email => "marc@pokelondon.com", :playing_square_id => 12 }
+    assert_equal "Congratulations! You have been entered into the competition to win Glastonbury Tickets.", flash[:notice]
+    id = Entrant.find(:first).id
+    
+    set_time_to_be_3pm
+    post "/groups/confirmation", :id => id
+    assert_equal "Congratulations! You have entered the competition to win free Glastonbury Tickets", flash[:notice]
+    assert_template "confirmation"
+      
+  end
+  
+  
+  
+  
+  def set_time_to_be_1pm
+  
+    new_now = Time.now.change(:hour => 13)
+    Time.stubs(:now).returns(new_now)
+    
+  end
+  
+  def set_time_to_be_3pm
+  
+    new_now = Time.now.change(:hour => 15)
+    Time.stubs(:now).returns(new_now)
+  
+  end
+
+end

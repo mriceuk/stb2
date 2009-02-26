@@ -1,0 +1,33 @@
+<div id="media_admin">
+
+	<h3>Square Media</h3>
+
+	<% unless params[:square] %>
+
+		<% form_tag "", :method => "get" do %>
+		  playing square ID: <%= select_tag "square", (1..99).collect {|o| '<option>' + o.to_s + '</option>'} %>
+		  <%= submit_tag "select square" %>
+		<% end %>
+
+	<% else %>
+	
+	  <% form_tag "/admin/create_media", :multipart => true do %>
+	    title: <%= text_field_tag "media_item[title]" %><br><br>
+	    file: <%= file_field_tag 'media_item[uploaded_data]' %><br>
+			<%= hidden_field_tag 'media_item[playing_square_id]', params[:square] %>
+			<%= submit_tag "submit" %>
+		<% end %>
+		
+		<h3>Media</h3>
+		<div id="news_items">
+			<% @media_items.each do |n| %>
+			  <h3><%= n.title %></h3>
+				<p><%= n.description %></p>
+				<%= link_to 'delete', { :action => "delete_news", :id => n.id}, :confirm => "are you sure?" %>
+			<% end %>
+	  </div>
+
+	<% end %>
+
+</div>
+

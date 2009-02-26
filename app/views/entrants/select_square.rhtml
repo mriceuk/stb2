@@ -1,0 +1,88 @@
+<style type='text/css'>
+	#feed_popup {
+	  z-index:10;
+	  position:absolute;
+	  width:270px;
+	  height:80px;
+	  display:block;
+	  margin-top:16px;
+	  padding:0;	
+	  background:#ffffff;
+	  font-size:10px;
+	  padding:5px;
+	}
+</style>
+<% if @entrant.playing_square_id.blank? and Time.now.hour != 14 %>
+
+<div id="wrapper">
+	<div id="main-content">
+		<div id="header"><img src="/images/header.jpg" alt="Spot the Bull and win Glastonbury tickets"/></div>
+		<div class="poster" id="bg-form">
+			<div class="form-header">
+				<h2>pick a square from 1 to 100 that you think Winston's going to be in at 3pm</h2>
+			</div>
+				
+			<% form_for  @entrant, :url => update_square_entrants_path, :html => {:id => "enter-details"} do |e| %>
+	
+				<div class="box your-details">
+					<span style="font-size:12px;color:red;text-align:right;float:right;margin-right:60px;"><%= flash[:notice] %></span>
+					<h3>enter your details</h3>
+					<p>
+						<label>square</label>
+						<%= e.select :playing_square_id, 1..100 %>
+					</p>
+					<p>
+						<label for="fname">full name</label>
+						<%= e.text_field :name %>
+					</p>
+
+					<p>
+						<label for="mobile">mobile</label>
+						<%= e.text_field :mobile %><br/>
+						<span>we'll use this to call you if you win</span>
+						
+					</p>
+				</div>
+				<div class="box opt-in">
+					<h3>tick the boxes to:</h3>
+					<p>
+						<%= e.check_box :optin, {}, 1 %>
+						<label>Receive Spot the Bull email updates</label>
+					</p>
+					<div id='feed_popup' style='display:none;'>The Feed is a daily blog and monthly email covering all the latest stuff we like and do.  It could be a particularly brilliant site or a can't miss competition.  It's basically full of the things that get us excited.  It's coming soon so be the first to hear about it.</div>
+					<p>
+						<%= e.check_box :feed, {}, 1 %>
+						<label>Subscribe to <%= link_to "The Feed", "", {:onmouseover => "document.getElementById('feed_popup').style.display=''", :onmouseout => "document.getElementById('feed_popup').style.display='none'"} %>  for more competitions, plus other cool stuff.</label>
+					</p>
+					<p>
+						<%= e.check_box :terms, {}, "agreed" %>
+						<label>Say yes to our <%= link_to "Terms &amp; Conditions", '/terms', {:target => "_blank"} %></label>
+					</p>
+					
+					<%= e.hidden_field :id %>
+					
+					<div class="buttons">
+						<%= link_to '<img src="/images/btn_cancel.gif" alt="cancel">', "/" %>
+
+						<input type="image" value="submit" src="/images/btn_submit.gif" style="vertical-align:top;" alt="submit"/>
+					</div>
+				</div>
+			
+			<% end %>
+		</div>
+	</div>
+</div>
+
+
+
+	
+<% else %>
+
+	<% if @entrant.playing_square_id.full? %>
+    <h1>You have already select a playing square</h1>
+	<% end %>
+	<% if Time.now.hour == 14 %>
+	  <h1>The draw is closed between 2pm and 3pm</h1>
+	<% end %>
+
+<% end %>

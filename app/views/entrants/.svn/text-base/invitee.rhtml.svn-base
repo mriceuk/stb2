@@ -1,0 +1,32 @@
+<% if @entrant.playing_square_id.blank? and Time.now.hour != 14 %>
+
+
+<div id="wrapper">
+	<div id="main-content">
+		<div id="header"><img src="/images/header.jpg" alt="Spot the Bull and win Glastonbury tickets"/></div>
+		<div class="poster">
+			<div class="poster-inner">
+				<h2><%= @originator.name %> invited you to play Spot the Bull</h2>
+				<h3>Fancy joining the team? </h3>
+				<h3>There&rsquo;s a pair of Glastonbury tickets each up for grabs.</h3>
+				<h3>By playing you&rsquo;ll increase the team&rsquo;s chances of winning.</h3>  
+				<h3>All you have to do is guess which part of the field Winston (our real-life bull) will be in at 3pm.  If you&rsquo;re right, we&rsquo;ll enter the team into the draw to win tickets.  Good luck.</h3>
+				<h3><strong>so far, the team has square(s): <%= @squares_list %></strong></h3>
+			</div>
+			<div class="btn-wrapper button-up">
+				<a href="<%= '/entrants/select_square/' + @entrant.uid.uid.to_s %>"><img src="/images/btn_startplaying.gif" alt="start playing now"></a>
+			</div>
+		</div>
+	</div>
+</div>
+	
+<% else %>
+
+	<% if @entrant.playing_square_id.full? %>
+    <h1>You have already select a playing square</h1>
+	<% end %>
+	<% if Time.now.hour == 14 %>
+	  <h1>The draw is closed between 2pm and 3pm</h1>
+	<% end %>
+
+<% end %>

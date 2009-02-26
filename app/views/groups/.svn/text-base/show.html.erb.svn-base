@@ -1,0 +1,43 @@
+<div id="wrapper">
+	<div id="main-content">
+		<div id="header"><img src="/images/header.jpg" alt="Spot the Bull and win Glastonbury tickets"/></div>
+		<div class="poster" id="bg-form">
+			<div class="form-header">
+				<h2>team up with friends and increase your chances of winning</h2>
+			</div>
+
+			<% form_tag('/groups/update', :id => "send-to-friend") do %>
+				<span style="font-size:12px;color:red;text-align:left;float:right;margin-right:60px;"><%= @msg %></span>
+				<div class="box heres-how">
+					<h3>here's how:</h3>
+					<ol>
+						<li>Invite up to 3 friends to join your team</li>
+						<li>They pick additional squares</li>
+						<li>Watch and see if Winston's in any of them at 3pm</li>
+						<li>If he is, you all go into the draw. If anyone in your team is picked, you all win 2 tickets each.</li>
+					</ol>
+				</div>
+				<div class="box send-inputs">
+					<p>
+						<label for="friend1">add 1 friend</label>
+						<%= text_field_tag 'friends[]' %>
+					</p>
+					<p>
+						<label for="friend2">add 2 friends</label>
+						<%= text_field_tag 'friends[]' %>
+					</p>
+					<p>
+						<label for="friend3">add 3 friends</label>
+						<%= text_field_tag 'friends[]' %>
+					</p>
+				  <%= hidden_field_tag 'group_id', @group.id %>
+					<div class="buttons">
+						<%= link_to '<img src="/images/btn_cancel.gif" alt="cancel">', confirmation_entrants_path + "/" + @entrant.id.to_s %>
+						<input type="image" value="submit" src="/images/btn_submit.gif" style="vertical-align:top;"/>
+					</div>
+				</div>
+
+			<% end %>
+		</div>
+	</div>
+</div>

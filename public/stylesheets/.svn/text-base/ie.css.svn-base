@@ -1,0 +1,17 @@
+/* IE css */
+/* fix hasLayout issues */
+.clearfix{
+	zoom: 1;
+}
+
+/* Alpha image filter for pngs */
+.div-with-png-bg{
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader (src='/img/overlay.png', sizingMethod='scale');
+}
+
+/* sorts out dropped floats (when percentage widths are used)*/
+/* http://www.designdetector.com/bugs/ie-dropped-float-bug.html */
+div {
+    overflow: hidden;
+	word-wrap: break-word;
+}

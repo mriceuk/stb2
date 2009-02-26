@@ -1,0 +1,29 @@
+<div id="flashcontent">
+	
+				<% if @uid!= nil  %>
+					<p class="htmlvers">Click <a href="/entrants/invitee/<%=@uid-%>">here</a> to accept your invitation.
+				<% else %>
+
+				<p class="htmlvers">Sorry. You'll need to have Flash 8 or higher to view the Spot the Bull website. It's very quick to download, honest, <a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&promoid=BIOW">just click here</a>. Alternatively, you can view a version of the site without Flash by <a href="/html">clicking here</a>.</p>
+
+				<% end %>
+</div>
+	
+		
+
+<div id="footer">
+		<ul>
+			<li>&copy; Orange 2008, all rights reserved.</li>
+			<li><a href="/terms" target="_blank">terms and conditions</a></li>
+			<li><a href="http://www1.orange.co.uk/siteprivacy/" target="_blank">privacy policy</a></li>
+			
+			
+			<% if @uid!= nil  %>
+				<li><a href="/entrants/invitee/<%=@uid-%>">non-flash version</a></li>
+			<% else %>
+			
+			<li><a href="/home">non-flash version</a></li> 
+	<% end %>
+		</ul>
+
+</div>

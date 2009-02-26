@@ -1,0 +1,10 @@
+--- 
+cwd: /poke/data/www/orange/spotthebull/live.stb2.orange.pokelondon.com/rails
+environment: production
+user: mongrel
+group: live
+address: 127.0.0.1
+port: "11200"
+servers: 4
+pid_file: log/mongrel.pid
+log_file: log/mongrel.log

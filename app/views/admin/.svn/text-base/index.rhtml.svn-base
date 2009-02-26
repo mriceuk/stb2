@@ -1,0 +1,5 @@
+<div id="home">
+  <p>Alright! <span><%= number_with_delimiter(@entrants_today.length) %></span> entrants for today's draw. <span><%= number_with_delimiter(@entrants_total.length) %></span> total entrants.</p>
+  <p>The next draw is in <span><%=  distance_of_time_in_words(Time.now, @deadline) %></span>.</p>
+  <p>The bull is sitting pretty on square <span><%= !@bull_position.nil? ? @bull_position.playing_square_id : "???" %></span>.
+</div>

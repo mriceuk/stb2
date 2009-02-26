@@ -1,0 +1,40 @@
+8
+
+dir
+347
+svn+ssh://marcr@linus/home/repository/pokelondon/projects/spotthebull2.orange.pokelondon.com/trunk/cronjobs
+svn+ssh://marcr@linus/home/repository/pokelondon/projects/spotthebull2.orange.pokelondon.com
+
+
+
+2008-04-18T09:28:58.890858Z
+10
+marcr
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3c6de2a4-704a-0410-9c07-9d928f4357c6
+
+position_cacher.rb
+file
+
+
+
+
+2008-05-22T09:21:56.000000Z
+284a764375562bd8052055ea87fe82eb
+2008-04-18T09:28:58.890858Z
+10
+marcr
+

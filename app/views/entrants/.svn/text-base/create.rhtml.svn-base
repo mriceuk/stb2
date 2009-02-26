@@ -1,0 +1,24 @@
+<div id="wrapper">
+	<div id="main-content">
+		<div id="header"><img src="images/header.jpg" alt="Spot the Bull and win Glastonbury tickets"/></div>
+		<div class="poster">
+			<div class="poster-inner">
+				<h2 class="tight">congratulations, you picked <%= @entrant.playing_square_id.to_s %><br/>
+					 you're in the running to win a pair of tickets </h2>
+				<h3>now increase your chances of winning by teaming up with friends</h3>
+				<h3 class="heavy">start a team for:</h3>
+				<ul>
+					<li>more squares</li>
+					<li>more entries into the draw</li>
+					<li>more tickets - everyone in the team could win a pair</li>
+				</ul>
+			</div>
+			<div class="btn-wrapper" style="margin-right:0;" >
+				<p style="padding-right:50px;">
+				<%= link_to '<img src="images/btn_cancel.gif" alt="cancel">', confirmation_entrants_path + "/" + @entrant.id.to_s %>
+				<%= link_to '<img src="images/btn_startteam.gif" alt="start a team">', '/groups/show/' + @entrant.group.id.to_s %>
+			  </p>
+			</div>
+		</div>
+	</div>
+</div>

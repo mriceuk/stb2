@@ -1,0 +1,13 @@
+Hi <%= @name %>
+
+You’ve chosen square <%= @playing_square_id.to_s %>.  And you’ve invited friends to play.
+
+To join your team they need to use the invitation link we’ve sent them by 2pm (don't worry, if they don’t your square’s still safe).
+
+Remember, the more friends who play, the better your chances of winning so it might be worth giving them a nudge.   
+
+If Winston ends up in any of your team’s squares, you’ll all go into the draw.  And if any of you win, you’ll all get pairs of tickets.  Not bad, eh?
+
+Good Luck.
+
+PS. To watch Winston visit http://www.spotthebull.co.uk

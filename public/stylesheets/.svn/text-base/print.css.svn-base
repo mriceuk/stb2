@@ -1,0 +1,28 @@
+/* 
+	Document:				print.css
+	Creation date: 			24 September 2007
+	Created by:				Gemma Leigh
+	Deployment version:		project/css/print.css
+	Notes:					Removes unnecessary content for printed version.
+
+*/
+* {
+	background: white !important;
+	background-image: none !important;
+	border: 0px !important;
+	color: #000 !important;
+}
+
+/* Clear floats to prevent Mozilla bugs*/
+#wrapper:after,
+#header:after,
+#main-content:after{
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+#wrapper:after,
+#header:after,
+#main-content:after{ display: inline-block;}

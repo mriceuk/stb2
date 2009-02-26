@@ -1,0 +1,65 @@
+entrant_00042: 
+  name: Claire Nicepants
+  entry_result: "NULL"
+  playing_square_id: 11
+  id: 42
+  group_id: 1
+  mobile: 
+  email: claire@pants.org
+  created_at: <%= Time.today.change(:hour => 11).to_s(:db) %>
+  active: true
+
+entrant_00043: 
+  name: Nicola Nicepants
+  entry_result: "NULL"
+  playing_square_id: 11
+  id: 43
+  group_id: 2
+  mobile: 
+  email: nic786@panits.org
+  created_at: <%= Time.today.change(:hour => 11).to_s(:db) %>
+  active: true
+    
+entrant_00044: 
+  name: Marc Nicepants
+  entry_result: "NULL"
+  playing_square_id: 11
+  id: 44
+  group_id: 3
+  mobile: 
+  email: marc786@pants.org
+  created_at: <%= Time.today.change(:hour => 11).to_s(:db) %>
+  active: true
+
+originator_entrant_1:
+  name: Original guy
+  entry_result: "NULL"
+  playing_square_id: 16
+  id: 32
+  group_id: 3
+  mobile: 
+  email: marc786@pants.org
+  created_at: <%= Time.today.change(:hour => 11).to_s(:db) %>
+  active: true
+
+originator_entrant_2:
+  name: Original guy 2
+  entry_result: "NULL"
+  playing_square_id: 16
+  id: 232
+  group_id: 3
+  mobile: 
+  email: marc786@pants.org
+  created_at: <%= Time.today.change(:hour => 11).to_s(:db) %>
+  active: true
+
+originator_entrant_3:
+  id: 34
+  name: Original guy 3
+  entry_result: "NULL"
+  playing_square_id: 16
+  group_id: 64
+  mobile: 
+  email: marc786@pants.org
+  created_at: <%= Time.today.change(:hour => 11).to_s(:db) %>
+  active: true

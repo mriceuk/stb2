@@ -1,0 +1,27 @@
+<div id="list_news" class="section">
+	<h2>Existing News Articles</h2>
+	  <div id="news_items">
+		<% @news_items.each do |news| %>
+		  <div class="news_item">
+		    <h3>
+  		    <span><%= news.id %>.</span> <%= news.title %><%= news.published ? nil : "<span class='published'>(unpublished)</span>" %>
+    		</h3>
+			  <p><%= news.description %></p>
+			  <% if news.media_item && news.media_type == "image"%>
+   		  <p class="media">
+   		    <%= image_tag news.media_item.public_filename, :width => 50, :height => 50 %>
+   		  </p>
+   		  <% end -%>
+			  <p class="meta">
+			    <%= news.created_at.strftime("%e %B %Y @ %H:%M") %> 
+			    <% if news.bull_location %>for Square <%= news.bull_location.playing_square_id %><% end -%>
+			  </p>
+
+			  <p class="actions">
+		      <%= link_to 'edit', { :action => "edit_news", :id => news} %>
+  			  <%= link_to 'delete', { :action => "delete_news", :id => news}, :confirm => "Are you sure you wish to delete news item #{news.title.titlecase}?" %>
+  			</p>
+			</div>
+		<% end -%>
+	  </div>
+</div>

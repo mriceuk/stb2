@@ -1,0 +1,81 @@
+8
+
+dir
+347
+svn+ssh://marcr@linus/home/repository/pokelondon/projects/spotthebull2.orange.pokelondon.com/trunk/db
+svn+ssh://marcr@linus/home/repository/pokelondon/projects/spotthebull2.orange.pokelondon.com
+
+
+
+2008-05-29T14:05:38.128124Z
+339
+andrew
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3c6de2a4-704a-0410-9c07-9d928f4357c6
+
+schema.rb
+file
+
+
+
+
+2008-05-26T15:03:02.000000Z
+b91b230bdd5b1acd27ef853d34e3fbef
+2008-05-26T15:03:04.624634Z
+278
+marcr
+
+dump_draw270508.sql.gz
+file
+
+
+
+
+2008-05-30T16:17:11.000000Z
+5c59e845183bfefe9e12664a0103f6af
+2008-05-27T14:09:42.893013Z
+295
+andrew
+has-props
+
+dump_draw280508.sql
+file
+
+
+
+
+2008-05-30T16:17:11.000000Z
+d3db8656eb042b78e96e1f808d4786f5
+2008-05-28T17:47:00.837706Z
+330
+andrew
+
+dump_draw290508.sql.gz
+file
+
+
+
+
+2008-05-30T16:17:11.000000Z
+9296ce0a856160dbe94c802121691c28
+2008-05-29T14:05:38.128124Z
+339
+andrew
+has-props
+
+migrate
+dir
+

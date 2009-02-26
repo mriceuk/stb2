@@ -1,0 +1,23 @@
+require "#{File.dirname(__FILE__)}/../test_helper"
+
+class ValidatesOriginatorInputTest < ActionController::IntegrationTest
+  # fixtures :your, :models
+
+  # Replace this with your real tests.
+  def test_all_fields_present
+=begin  
+    get "/home"
+    assert_response :success
+    assert_template "home/index"
+=end
+
+    #should work needs a look in
+    post "/entrants/create", :entrant => { :name => "marc rice", :email => "marcr@pokelondon.com", :playing_square_id => 32  } 
+    assert_response :success
+
+    #follow_redirect!
+    #assert_response :success
+    #assert_template "home/index"
+
+  end
+end
